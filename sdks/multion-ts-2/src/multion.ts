@@ -48,7 +48,7 @@ const __dirname = path.dirname(__filename);
 export class Multion {
   private clientId: string;
   private clientSecret: string;
-  private secretsFilePath = './secrets.json';
+  private secretsFilePath: string;
   private verbose?: boolean;
   private tokenURL = 'https://auth.multion.ai/oauth2/token';
   private apiURL = `https://api.multion.ai`;
@@ -59,7 +59,7 @@ export class Multion {
 
   constructor(params: MultionParams = {}) {
     const { tokenFile } = params;
-    this.secretsFilePath = path.join(__dirname, 'secrets.json');
+    this.secretsFilePath = path.join(__dirname, '../secrets.json');
     const secrets = this.getSecrets();
     this.clientId = secrets.MULTION_CLIENT_ID;
     this.clientSecret = secrets.MULTION_CLIENT_SECRET;
@@ -334,7 +334,10 @@ export class Multion {
     return await this.post(url, data);
   };
 
-  readonly updateSession = async (sessionId: string, data: SessionDataParams) => {
+  readonly updateSession = async (
+    sessionId: string,
+    data: SessionDataParams,
+  ) => {
     const url = `${this.apiURL}/session/${sessionId}`;
     return await this.post(url, data);
   };
