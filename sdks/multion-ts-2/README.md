@@ -10,7 +10,8 @@ To get started with the MultiOn Typescript SDK, execute the following steps:
 
 2. Install the dependencies using `npm install`
 
-3. Create a `secrets.json` file in the root of the project. This file should have a `MULTION_CLIENT_ID` & `MULTION_CLIENT_SECRET` key. The values for these keys can be obtained from the MultiOn team.
+3. Create a `secrets.json` file in the root of the project.<br>
+This file should have a `MULTION_CLIENT_ID` & `MULTION_CLIENT_SECRET` key. The values for these keys can be obtained from the MultiOn team.
 
 4. Finally, you can run the `test.ts` in two ways:
    - To run it without logs:
